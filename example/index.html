@@ -1,0 +1,40 @@
+<!--
+ * @Author: cuimengyu 1162843632@qq.com
+ * @Date: 2022-10-27 11:23:30
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-10-28 10:08:23
+ * @Description:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jim datav example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
+    <script src="../dist/jim-datav.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <test-component></test-component>
+    </div>
+   
+    <item></item>
+    <script >
+     
+         Vue.createApp({
+            
+            setup(){
+                const message = 'hello'
+                return {
+                    message
+                }
+            }
+        }).use(Datav).mount("#app")
+
+    </script>
+</body>
+</html>
