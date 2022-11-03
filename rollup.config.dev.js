@@ -3,7 +3,7 @@
  * @Date: 2022-10-27 11:09:26
  * @LastEditors: Please set LastEditors
  * @LastEditTime: 2022-10-27 16:30:56
- * @Description: 
+ * @Description:
  */
 const path = require('path')
 const resolve = require('rollup-plugin-node-resolve')
@@ -37,7 +37,16 @@ module.exports = {
         resolve(),
         commonjs(),
         babel({
-            exclude: "node_modules/**"
+            exclude: "node_modules/**",
+            runtimeHelpers: true,
+            "plugins": [
+                [
+                    "@babel/plugin-transform-runtime",
+                    {
+                        "regenerator": true,
+                    }
+                ]
+            ]
         }),
         json(),
         postcss({
